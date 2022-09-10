@@ -11,16 +11,22 @@
 * Если строки разные и первая длиннее, вернуть 2
 * Если строки разные и вторая строка 'learn', возвращает 3
 * Вызвать функцию несколько раз, передавая ей разные праметры 
-  и выводя на экран результаты
+  и выводя на экран результаты"""
 
-"""
+def main(a,b):
+  if not isinstance(a, str) or not isinstance(b, str):
+    return 0
+  elif len(a) == len(b):
+    return 1
+  elif len(a) != len(b) and b.lower() == "learn":
+    return 3
+  elif len(a) > len(b):
+    return 2
+  
 
-def main():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
-    
-if __name__ == "__main__":
-    main()
+
+
+print(main("cat", 1)) #0
+print(main("cat", "lac")) #1
+print(main("qwer", "asd")) #2
+print(main("zxddddddd","learn")) #3
